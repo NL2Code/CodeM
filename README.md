@@ -1,6 +1,21 @@
-# CodeM: Can Programming Languages Boost Each Other via Instruction Tuning?
+# CodeM: Less Data Yields More Versatility via Ability Matrix
 
-[paper](https://arxiv.org/pdf/2308.16824.pdf)
+[paper](https://openreview.net/pdf?id=FhpWlIs7V3)
 
 ## Abstract
-When human programmers have mastered a programming language, it would be easier when they learn a new programming language. In this report, we focus on exploring whether programming languages can boost each other during the instruction fine-tuning phase of code large language models. We conduct extensive experiments of 8 popular programming languages (Python, JavaScript, TypeScript, C, C++, Java, Go, HTML) on StarCoder. Results demonstrate that programming languages can significantly improve each other. For example, CodeM-Python 15B trained on Python is able to increase Java by an absolute 17.95% pass@1 on HumanEval-X. More surprisingly, we found that CodeM-HTML 7B trained on the HTML corpus can improve Java by an absolute 15.24% pass@1. Our training data is released at [this https URL](https://huggingface.co/datasets/Daoguang/CodeM-Multilinugal-Data) or [this folder](https://github.com/NL2Code/CodeM/tree/main/data).
+In the era of code large language models (code LLMs), data engineering plays a pivotal role during the instruction fine-tuning phase. To train a versatile model, previous efforts devote tremendous efforts into crafting instruction data covering all the downstream scenarios. Nonetheless, this will incur significant expenses in constructing data and training model. Therefore, this paper introduces CodeM, a novel data construction strategy, which can efficiently train a versatile model using less data via our newly proposed ability matrix. CodeM uses ability matrix to decouple code LLMs' abilities into two dimensions, constructing a lightweight training corpus that only covers a subset of target scenarios. Extensive experiments on HumanEvalPack and MultiPL-E imply that code LLMs can combine the single-dimensional abilities to master composed abilities, validating the effectiveness of CodeM.
+
+## Data
+[download multi-langs&tasks code data](https://github.com/NL2Code/CodeM/releases/tag/CodeM-data)
+
+## Citation
+```
+@inproceedings{
+zan2024codem,
+title={CodeM: Less Data Yields More Versatility via Ability Matrix},
+author={Daoguang Zan, Ailun Yu, Wei Liu, Bo Shen, Shaoxin Lin, Yongshun Gong, Yafen Yao, Yan Liu, Bei Guan, Weihua Luo, Yongji Wang, Qianxiang Wang, Lizhen Cui},
+booktitle={The 62nd Annual Meeting of the Association for Computational Linguistics},
+year={2024},
+url={https://openreview.net/forum?id=FhpWlIs7V3}
+}
+```
